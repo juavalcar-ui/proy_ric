@@ -1,0 +1,1035 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Sovereign Index — Apex Sovereign Board</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#690005",
+            "surface-container-lowest": "#0d0e12",
+            "on-primary-fixed": "#241a00",
+            "inverse-surface": "#e3e2e8",
+            "surface-dim": "#121317",
+            "outline": "#99907c",
+            "surface-tint": "#e9c349",
+            "surface": "#121317",
+            "secondary-fixed": "#ffe087",
+            "secondary-container": "#655000",
+            "primary": "#f2ca50",
+            "on-tertiary-fixed-variant": "#45464e",
+            "on-background": "#e3e2e8",
+            "inverse-on-surface": "#2f3035",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e3e2e8",
+            "surface-variant": "#343439",
+            "tertiary-container": "#b2b2bb",
+            "on-surface-variant": "#d0c5af",
+            "on-primary-container": "#554300",
+            "primary-fixed": "#ffe088",
+            "error": "#ffb4ab",
+            "on-secondary-fixed-variant": "#574500",
+            "on-primary-fixed-variant": "#574500",
+            "background": "#121317",
+            "secondary": "#e1c46e",
+            "tertiary-fixed": "#e2e1eb",
+            "on-tertiary-fixed": "#1a1b22",
+            "on-secondary-fixed": "#231b00",
+            "tertiary-fixed-dim": "#c6c6cf",
+            "tertiary": "#cecdd7",
+            "outline-variant": "#4d4635",
+            "on-tertiary": "#2f3037",
+            "on-secondary": "#3c2f00",
+            "secondary-fixed-dim": "#e1c46e",
+            "on-tertiary-container": "#43444c",
+            "surface-container-high": "#292a2e",
+            "error-container": "#93000a",
+            "on-primary": "#3c2f00",
+            "on-secondary-container": "#e1c46e",
+            "primary-container": "#d4af37",
+            "surface-bright": "#38393e",
+            "primary-fixed-dim": "#e9c349",
+            "inverse-primary": "#735c00",
+            "surface-container-highest": "#343439",
+            "surface-container-low": "#1a1b20",
+            "surface-container": "#1f1f24"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xs": "0.375rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "gutter-mobile": "0.75rem",
+            "space-lg": "2rem",
+            "space-xl": "3.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "numeral-hero": ["Playfair Display"],
+            "numeral-hero-mobile": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "display-md-mobile": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "display-md": ["Playfair Display"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "numeral-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+            "numeral-hero-mobile": ["42px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.16em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-md-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "display-md": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Subtle luxury radial lighting */
+    .bg-obsidian-glow {
+      background: radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.08) 0%, rgba(18, 19, 23, 0) 70%),
+                  radial-gradient(circle at 10% 40%, rgba(242, 202, 80, 0.03) 0%, rgba(18, 19, 23, 0) 50%);
+    }
+    .gold-shimmer-border {
+      position: relative;
+    }
+    .gold-shimmer-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2.8s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary selection:text-on-primary min-h-screen flex flex-col relative overflow-x-hidden bg-obsidian-glow">
+<!-- ================= TOP APP BAR ================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.85)]">
+<div class="w-full max-w-[1440px] mx-auto h-20 px-4 md:px-margin flex items-center justify-between">
+<!-- Brand Cluster -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Apex Sovereign Board" class="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Wpay98-nqMFQ_T9pEnebSrrUtn4nvLlt8zyW3jZWiGJDp79S3YhCVvIVvRXH7igWug3nUrAIAXD111fMmHI5zjgMIYRGxh6zGOqGNYP7BZnTAq2qINeKp0wUV8XtKIox61ZOwFYeBzafhdL1E9yKQ9omptonJpRb2KNhEq9dKCR63NkmI8zZtYbh0XqnQg-pmEN4rCMeF_9ZDP7iRBcEbvswIF3su8d-NKmCosLmtj14LesKypao4Ip9k">
+</a>
+<!-- Live Reserve Ticker (Desktop only) -->
+
+</div>
+<!-- Main Navigation -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-primary border-b border-primary pb-1 font-label-lg text-label-lg tracking-widest uppercase flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+          The Global Index
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg tracking-widest uppercase transition-colors" href="#">
+          Private Dossier
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg tracking-widest uppercase transition-colors" href="#">
+          Audited Reserves
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg tracking-widest uppercase transition-colors" href="#">
+          Vault Protocol
+        </a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3 md:gap-4">
+<!-- Status Indicator Pill -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/40 rounded-DEFAULT">
+<span class="material-symbols-outlined text-primary text-[15px] fill-icon">shield</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Tier Apex I</span>
+</div>
+<!-- Notification Lock Icons -->
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/20 rounded-DEFAULT bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors border border-outline-variant/20 rounded-DEFAULT bg-surface-container-lowest relative">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+<span class="absolute top-2 right-2 w-1.5 h-1.5 bg-primary rounded-full"></span>
+</button>
+<!-- Primary CTA to trigger Drawer -->
+<button class="relative group overflow-hidden px-4 py-2.5 bg-gradient-to-r from-primary-fixed via-primary to-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-widest rounded-DEFAULT shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_30px_rgba(212,175,55,0.45)] transition-all duration-300 active:scale-[0.99] flex items-center gap-2" onclick="toggleDrawer(true)">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+<span class="">Ascend Tribute</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="flex-grow pt-28 pb-space-xl w-full max-w-[1440px] mx-auto px-4 md:px-margin">
+<!-- Hero Section: Prestige Statement -->
+<section class="mt-4 mb-12 text-center relative max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-surface-container-low mb-5">
+<span class="material-symbols-outlined text-primary text-[14px]">stars</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">El Olimpo de los Privilegiados</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface font-headline-lg tracking-tight mb-4">
+        The Sovereign Index
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+        Donde el capital soberano no se presume ni se insinúa: se certifica, se custodia y se inmortaliza bajo estricto protocolo de no-repudio.
+      </p>
+<!-- Live Global Metric Cards Cluster -->
+<div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-outline-variant/20 md:grid-cols-3">
+
+<div class="p-3.5 bg-surface-container-low/70 border border-outline-variant/20 rounded-DEFAULT text-left">
+<div class="font-label-sm text-label-sm uppercase text-outline">Líder Absoluto</div>
+<div class="font-headline-md text-headline-md text-primary font-semibold mt-1">$150,000,000</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Lord Alexander S.</div>
+</div>
+<div class="p-3.5 bg-surface-container-low/70 border border-outline-variant/20 rounded-DEFAULT text-left">
+<div class="font-label-sm text-label-sm uppercase text-outline">Soberanos Registrados</div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold mt-1">42 Miembros</div>
+<div class="font-label-sm text-label-sm text-emerald-400/80 mt-0.5">100% Verificados ZK</div>
+</div>
+<div class="p-3.5 bg-surface-container-low/70 border border-outline-variant/20 rounded-DEFAULT text-left">
+<div class="font-label-sm text-label-sm uppercase text-outline">Custodia Suiza</div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold mt-1">FINMA Vault 01</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">Zúrich / Ginebra</div>
+</div>
+</div>
+</section>
+<!-- ================= THE PODIUM: TOP 3 SOVEREIGN MEMBERS ================= -->
+<section class="mb-14">
+<div class="flex items-center justify-between mb-6 pb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] fill-icon">workspace_premium</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">La Tríada Regente</h2>
+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+          Poder de Voto Mayoritario: 72.8%
+        </div>
+</div>
+<!-- Bento-style Podium Arrangement -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+<!-- #2 Solomon VII (Rank 2) -->
+<div class="md:col-span-4 order-2 md:order-1 bg-surface-container-low/90 border border-outline-variant/40 rounded-DEFAULT p-6 relative overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-outline hover:shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
+<div class="absolute -right-8 -top-8 w-28 h-28 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="font-numeral-hero text-numeral-hero-mobile font-headline-lg text-tertiary-fixed leading-none">02</span>
+<div class="px-2 py-0.5 text-[10px] uppercase tracking-widest font-semibold bg-tertiary-fixed/10 text-tertiary-fixed border border-tertiary-fixed/20 rounded-DEFAULT">
+                Platinum Apex
+              </div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[28px]">military_tech</span>
+</div>
+<div class="mb-5">
+<h3 class="font-title-lg text-title-lg text-on-surface font-medium">Solomon VII</h3>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-0.5">Dinastía Bancaria Privada</p>
+</div>
+<blockquote class="italic font-body-md text-body-md text-on-surface-variant border-l border-tertiary/30 pl-3.5 my-4">
+            "La discreción es para quienes aún necesitan explicaciones."
+          </blockquote>
+<div class="pt-4 border-t border-outline-variant/20 flex items-end justify-between">
+<div>
+<div class="font-label-sm text-label-sm uppercase text-outline">Contribución Total</div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold">$95,500,000 <span class="text-xs font-normal text-outline">USD</span></div>
+</div>
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-colors flex items-center gap-1" onclick="openTributeFor('Solomon VII', 95500000)">
+<span class="">Superar</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+</div>
+<!-- #1 Lord Alexander Sterling (Rank 1 - Apex Titan) -->
+<div class="md:col-span-4 order-1 md:order-2 bg-surface-container/95 border-2 border-primary/50 rounded-DEFAULT p-7 relative overflow-hidden shadow-[0_0_50px_-10px_rgba(212,175,55,0.22)] -translate-y-2">
+<!-- Gold Caustic Ambient Light -->
+<div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2.5">
+<span class="font-numeral-hero text-numeral-hero font-headline-lg text-primary leading-none">01</span>
+<div class="flex flex-col">
+<span class="px-2.5 py-0.5 text-[10px] uppercase tracking-widest font-bold bg-primary text-on-primary rounded-DEFAULT">
+                  Sovereign Titan
+                </span>
+<span class="text-[9px] uppercase tracking-widest text-primary mt-0.5">Custodio Principal</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 border border-primary/40 flex items-center justify-center text-primary shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+<span class="material-symbols-outlined text-[30px] fill-icon">crown</span>
+</div>
+</div>
+<div class="mb-5">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Lord Alexander Sterling</h3>
+<span class="material-symbols-outlined text-primary text-[18px] fill-icon" title="Verificado con Certificado Sovereign">verified</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary/80 uppercase tracking-wider mt-0.5">Heredero de Reserva de Oro &amp; Fondos Soberanos</p>
+</div>
+<blockquote class="italic font-headline-lg text-body-lg text-primary-fixed border-l-2 border-primary pl-4 my-5 leading-relaxed bg-surface-container-lowest/40 py-2">
+            "El dinero no compra la felicidad, compra la ausencia total de límites."
+          </blockquote>
+<div class="pt-4 border-t border-primary/20 flex items-end justify-between">
+<div>
+<div class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Tributo Inmortalizado</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">$150,000,000 <span class="text-sm font-normal text-on-surface-variant">USD</span></div>
+</div>
+<button class="px-3.5 py-2 bg-primary text-on-primary hover:bg-primary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold rounded-DEFAULT transition-all shadow-[0_0_15px_rgba(212,175,55,0.3)] flex items-center gap-1.5" onclick="openTributeFor('Lord Alexander Sterling', 150000000)">
+<span class="">Disputar Trono</span>
+<span class="material-symbols-outlined text-[15px]">swords</span>
+</button>
+</div>
+</div>
+<!-- #3 Empress V. (Rank 3) -->
+<div class="md:col-span-4 order-3 md:order-3 bg-surface-container-low/90 border border-outline-variant/40 rounded-DEFAULT p-6 relative overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-outline hover:shadow-[0_10px_30px_rgba(0,0,0,0.7)]">
+<div class="absolute -left-8 -top-8 w-28 h-28 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="font-numeral-hero text-numeral-hero-mobile font-headline-lg text-secondary leading-none">03</span>
+<div class="px-2 py-0.5 text-[10px] uppercase tracking-widest font-semibold bg-secondary/10 text-secondary border border-secondary/20 rounded-DEFAULT">
+                Aureus Prime
+              </div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[28px]">shield_person</span>
+</div>
+<div class="mb-5">
+<h3 class="font-title-lg text-title-lg text-on-surface font-medium">Empress V.</h3>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider mt-0.5">Sindicato Tecnológico Singapur</p>
+</div>
+<blockquote class="italic font-body-md text-body-md text-on-surface-variant border-l border-secondary/40 pl-3.5 my-4">
+            "El tiempo es oro; el mío vale diez veces más."
+          </blockquote>
+<div class="pt-4 border-t border-outline-variant/20 flex items-end justify-between">
+<div>
+<div class="font-label-sm text-label-sm uppercase text-outline">Contribución Total</div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold">$72,000,000 <span class="text-xs font-normal text-outline">USD</span></div>
+</div>
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-colors flex items-center gap-1" onclick="openTributeFor('Empress V.', 72000000)">
+<span class="">Superar</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= CURRENT USER PINNED STATUS BAR ================= -->
+<div class="mb-10 sticky top-24 z-30">
+<div class="bg-surface-container-high/95 backdrop-blur-md border-y md:border border-primary/40 md:rounded-DEFAULT p-4 md:px-6 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.9)] flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Left: Identity and Position -->
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="w-12 h-12 rounded-DEFAULT bg-primary/10 border border-primary/40 flex items-center justify-center shrink-0">
+<span class="font-headline-md text-headline-md text-primary font-bold">#7</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold">César Nocturno</span>
+<span class="px-2 py-0.2 text-[10px] uppercase tracking-widest bg-outline-variant/40 text-on-surface-variant border border-outline-variant/60 rounded-DEFAULT">Tú</span>
+<span class="w-2 h-2 rounded-full bg-emerald-400" title="Sesión activa y firma validada"></span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+              Tributo acumulado: <span class="text-on-surface font-semibold">$28,500,000 USD</span>
+</p>
+</div>
+</div>
+<!-- Center: Differential Metric -->
+<div class="w-full md:w-auto text-left md:text-center px-4 py-2 bg-surface-container-lowest/80 rounded-DEFAULT border border-outline-variant/30 flex items-center justify-between md:justify-center gap-6">
+<div class="text-left">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Brecha al Puesto #6</span>
+<span class="font-title-md text-title-md text-primary font-semibold">$2,500,001 USD</span>
+</div>
+<div class="hidden sm:block text-right border-l border-outline-variant/30 pl-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Predecesor Inmediato</span>
+<span class="font-body-md text-body-md text-on-surface">Archiduque K.</span>
+</div>
+</div>
+<!-- Right: Instant Action Button -->
+<button class="w-full md:w-auto px-5 py-2.5 bg-gradient-to-r from-primary-fixed via-primary to-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-widest rounded-DEFAULT shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all flex items-center justify-center gap-2 shrink-0" onclick="openTributeFor('Puesto #6 (Archiduque K.)', 31000001)">
+<span class="material-symbols-outlined text-[18px]">upgrade</span>
+<span class="">Pagar Tributo y Superar</span>
+</button>
+</div>
+</div>
+<!-- ================= THE ZENITH INDEX TABLE (RANKS #4 TO #15) ================= -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-DEFAULT overflow-hidden shadow-2xl">
+<!-- Table Header Bar -->
+<div class="p-5 md:px-6 bg-surface-container-low/60 border-b border-outline-variant/30 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface flex items-center gap-2">
+<span class="">El Índice Soberano</span>
+<span class="text-sm font-normal text-outline">(Posiciones #4 — #15)</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Registros auditados vía contrato criptográfico descentralizado con custodia suiza.
+          </p>
+</div>
+<!-- Filter & Search Controls -->
+<div class="flex items-center gap-3">
+<div class="relative">
+<input class="bg-surface-container-high border border-outline-variant/40 rounded-DEFAULT px-3.5 py-1.5 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary w-52 md:w-64 font-body-md" id="memberSearch" onkeyup="filterTable()" placeholder="Buscar alias o insignia..." type="text">
+<span class="material-symbols-outlined absolute right-2.5 top-2 text-outline text-[18px]">search</span>
+</div>
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary rounded-DEFAULT flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="hidden sm:inline">Filtro</span>
+</button>
+</div>
+</div>
+<!-- Table responsive container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="leaderboardTable">
+<thead>
+<tr class="border-b border-outline-variant/30 bg-surface-container-low/30 font-label-sm text-label-sm uppercase tracking-widest text-outline">
+<th class="py-3.5 px-4 md:px-6 w-16 text-center">Rango</th>
+<th class="py-3.5 px-4">Nivel / Insignia</th>
+<th class="py-3.5 px-4">Miembro Soberano</th>
+<th class="py-3.5 px-4 hidden lg:table-cell">Lema de Estatus</th>
+<th class="py-3.5 px-4 text-right">Monto Contribuido (USD)</th>
+<th class="py-3.5 px-4 md:px-6 text-center w-36">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">04</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Apex Grand Duke
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Valerius Corvo</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon" title="Verificado">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Consorcio Naviero Pireo</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "El control silencioso es la única forma duradera de poder."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $58,000,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Valerius Corvo', 58000000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">05</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Dynasty Baron
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Madame Hélène de Montmirail</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Patrimonio Vitivinícola Burdeos</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "La tradición no se improvisa con una fortuna reciente."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $44,200,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Madame Hélène de Montmirail', 44200000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 6 (Immediate Target) -->
+<tr class="hover:bg-surface-container/60 transition-colors group bg-surface-container-low/40 border-l-2 border-primary">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-primary font-bold">06</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-primary/40 text-primary rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                  Target Inmediato
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Archiduque K.</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Fondos Cuánticos Zúrich</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "Los números hablan en frecuencias que los mediocres no escuchan."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-primary font-bold">
+                $31,000,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 bg-primary/20 hover:bg-primary text-primary hover:text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all font-semibold" onclick="openTributeFor('Archiduque K.', 31000000)">
+                  Superar
+                </button>
+</td>
+</tr>
+<!-- Row 7 (User Current Position) -->
+<tr class="bg-surface-container/70 border-l-4 border-l-primary hover:bg-surface-container transition-colors">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-primary font-bold">07</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-primary text-on-primary rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px]">person</span>
+                  Tu Asiento
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-primary font-bold flex items-center gap-2">
+<span class="">César Nocturno</span>
+<span class="text-xs font-normal text-outline-variant">(Tú)</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary/80">Arbitraje Global &amp; Capital Reservado</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface italic font-body-md text-body-md max-w-xs truncate">
+                "Aspirante al trono; la paciencia es el arma de los reyes."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-primary font-bold">
+                $28,500,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Posición Actual</span>
+</td>
+</tr>
+<!-- Row 8 (Anonymous Imperial Privacy State) -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">08</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-lowest border border-outline-variant/30 text-outline rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[12px]">visibility_off</span>
+                  Zero-Knowledge
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface-variant/90 group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Anónimo Imperial</span>
+<span class="material-symbols-outlined text-[15px] text-outline">key</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline font-mono text-[11px]">0x7F9B...4D82 (Blind Trust)</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant/70 italic font-body-md text-body-md max-w-xs truncate">
+                "Observo desde las sombras."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $26,000,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Anónimo Imperial', 26000000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 9 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">09</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Apex Noble
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Lady Vivienne Thorne</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Mayfair Private Chambers</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "La opulencia no necesita levantar la voz."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $24,800,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Lady Vivienne Thorne', 24800000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 10 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">10</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Apex Noble
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Sheikh Tariq Al-Mansoor</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Energy Royal Family Office</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "El desierto engendra reyes, el oro los consagra."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $22,500,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Sheikh Tariq Al-Mansoor', 22500000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 11 (High Discretion / Masked) -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">11</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-lowest border border-outline-variant/30 text-outline rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[12px]">security</span>
+                  Tier Discreto
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface-variant/80 group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Protocol Entity VIII</span>
+<span class="material-symbols-outlined text-[15px] text-outline">lock</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Entidad Soberana de Liechtenstein</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant/70 italic font-body-md text-body-md max-w-xs truncate">
+                "Certificado sin custodia de datos públicos."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $19,750,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Protocol Entity VIII', 19750000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 12 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">12</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Apex Noble
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Baron von Keller</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Banca Privada de Ginebra</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "La constancia es la mayor de las virtudes patrimoniales."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $17,300,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Baron von Keller', 17300000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 13 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">13</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Apex Knight
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Magnus Lindqvist</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Nordic Industrial Holdings</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "Precisión nórdica, solidez eterna."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $15,000,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Magnus Lindqvist', 15000000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 14 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">14</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Apex Knight
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Kenjiro Takahashi</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Tokyo Real Estate Conglomerate</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "La roca inmutable frente al océano."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $12,400,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Kenjiro Takahashi', 12400000)">
+                  Retar
+                </button>
+</td>
+</tr>
+<!-- Row 15 -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-4 px-4 md:px-6 text-center font-headline-md text-headline-md text-tertiary">15</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-DEFAULT inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Apex Knight
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors flex items-center gap-2">
+<span class="">Don Rodrigo de la Cerda</span>
+<span class="material-symbols-outlined text-[15px] text-primary fill-icon">verified</span>
+</div>
+<div class="font-label-sm text-label-sm text-outline">Haciendas &amp; Banca Privada Madrid</div>
+</td>
+<td class="py-4 px-4 hidden lg:table-cell text-on-surface-variant italic font-body-md text-body-md max-w-xs truncate">
+                "Honor, casta y soberanía de linaje."
+              </td>
+<td class="py-4 px-4 text-right font-headline-md text-headline-md text-on-surface font-semibold">
+                $10,500,000
+              </td>
+<td class="py-4 px-4 md:px-6 text-center">
+<button class="px-3 py-1.5 border border-outline-variant/40 hover:border-primary text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all group-hover:bg-surface-container-high" onclick="openTributeFor('Don Rodrigo de la Cerda', 10500000)">
+                  Retar
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footnote -->
+<div class="p-4 bg-surface-container-low/40 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between text-xs text-outline gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="">Actualización en tiempo real vía oráculo suizo de liquidación.</span>
+</div>
+<div class="font-mono text-[11px]">
+          Último bloque: #19842091 • Hash de Bóveda: 0x81FA...C912
+        </div>
+</div>
+</section>
+<!-- ================= PROTOCOL RULES & DISCRETION SEAL ================= -->
+<section class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 bg-surface-container-low/60 border border-outline-variant/20 rounded-DEFAULT">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Protocolo de No-Repudio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Cada tributo aportado es irrevocablemente consolidado en la bóveda madre. No existen reembolsos; el estatus es perpetuo o superado.
+        </p>
+</div>
+<div class="p-6 bg-surface-container-low/60 border border-outline-variant/20 rounded-DEFAULT">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Discreción Imperial Opcional</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Los miembros pueden encriptar su nombre de pila en cualquier momento mediante prueba de conocimiento cero (Zero-Knowledge Proofs).
+        </p>
+</div>
+<div class="p-6 bg-surface-container-low/60 border border-outline-variant/20 rounded-DEFAULT">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[20px]">concierge</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Concierge &amp; Escolta Apex</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          El Top 3 cuenta con línea directa física al Consejo Rector en Zúrich y acceso preferencial a licitaciones soberanas de activos de arte y minería.
+        </p>
+</div>
+</section>
+</main>
+<!-- ================= TRIBUTE / ASCEND INSTANT ACTION DRAWER ================= -->
+<div aria-hidden="true" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0" id="tributeDrawer">
+<!-- Backdrop Backdrop -->
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm pointer-events-auto cursor-pointer" onclick="toggleDrawer(false)"></div>
+<!-- Right Drawer Content -->
+<div class="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-surface border-l border-outline-variant/40 shadow-2xl p-6 md:p-8 flex flex-col justify-between overflow-y-auto pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out" id="drawerPanel">
+<!-- Drawer Header -->
+<div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Ascender Posición</h2>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-outline hover:text-on-surface rounded-DEFAULT border border-outline-variant/30" onclick="toggleDrawer(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Target Notification Banner -->
+<div class="p-3.5 bg-surface-container-low border border-primary/30 rounded-DEFAULT mb-6">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Objetivo Seleccionado</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-title-md text-title-md text-on-surface font-semibold" id="targetName">Posición Superior</span>
+<span class="font-headline-md text-headline-md text-primary font-bold" id="targetAmount">$31,000,001 USD</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-1">
+            Se requiere superar la marca por al menos $1 USD para consolidar el nuevo puesto en el Índice.
+          </p>
+</div>
+<!-- Quick Amount Presets -->
+<div class="mb-6">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-outline block mb-2.5">
+            Seleccionar Monto de Tributo
+          </label>
+<div class="grid grid-cols-3 gap-2.5 mb-3">
+<button class="preset-btn py-2.5 px-3 text-center border border-outline-variant/40 hover:border-primary rounded-DEFAULT bg-surface-container-low font-title-md text-title-md text-on-surface transition-colors" onclick="setTributeAmount(1000000)" type="button">
+              +$1,000,000
+            </button>
+<button class="preset-btn py-2.5 px-3 text-center border border-outline-variant/40 hover:border-primary rounded-DEFAULT bg-surface-container-low font-title-md text-title-md text-on-surface transition-colors" onclick="setTributeAmount(5000000)" type="button">
+              +$5,000,000
+            </button>
+<button class="preset-btn py-2.5 px-3 text-center border border-primary text-primary rounded-DEFAULT bg-primary/10 font-title-md text-title-md transition-colors" onclick="setTributeAmount(10000000)" type="button">
+              +$10,000,000
+            </button>
+</div>
+<!-- Custom Numeric Input -->
+<div class="relative">
+<span class="absolute left-3.5 top-3 text-outline font-headline-md">$</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary rounded-DEFAULT py-2.5 pl-8 pr-16 font-headline-md text-headline-md text-primary tracking-tight" id="customTributeInput" type="text" value="10,000,000">
+<span class="absolute right-3.5 top-3.5 font-label-sm text-label-sm uppercase text-outline">USD</span>
+</div>
+</div>
+<!-- Payment Rails Selection -->
+<div class="mb-6">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-outline block mb-2.5">
+            Canal de Liquidación Inmediata
+          </label>
+<div class="space-y-2.5">
+<label class="flex items-center justify-between p-3 border border-primary/50 bg-surface-container-low rounded-DEFAULT cursor-pointer">
+<div class="flex items-center gap-3">
+<input checked="" class="text-primary focus:ring-0 bg-surface-container-high border-outline-variant" name="paymentRail" type="radio">
+<div>
+<div class="font-title-md text-title-md text-on-surface">Centurion Black Wire</div>
+<div class="font-body-md text-body-md text-outline text-xs">Liquidación instantánea vía American Express Centurion Bank</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
+</label>
+<label class="flex items-center justify-between p-3 border border-outline-variant/30 hover:border-outline bg-surface-container-low rounded-DEFAULT cursor-pointer">
+<div class="flex items-center gap-3">
+<input class="text-primary focus:ring-0 bg-surface-container-high border-outline-variant" name="paymentRail" type="radio">
+<div>
+<div class="font-title-md text-title-md text-on-surface">Bóveda Crypto Multi-Sig</div>
+<div class="font-body-md text-body-md text-outline text-xs">USDT / USDC / ETH en contrato custodiado en Suiza</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">currency_bitcoin</span>
+</label>
+<label class="flex items-center justify-between p-3 border border-outline-variant/30 hover:border-outline bg-surface-container-low rounded-DEFAULT cursor-pointer">
+<div class="flex items-center gap-3">
+<input class="text-primary focus:ring-0 bg-surface-container-high border-outline-variant" name="paymentRail" type="radio">
+<div>
+<div class="font-title-md text-title-md text-on-surface">Wire Suizo Directo (SIX)</div>
+<div class="font-body-md text-body-md text-outline text-xs">Transferencia bancaria interbancaria Zúrich FINMA</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">account_balance</span>
+</label>
+</div>
+</div>
+<!-- Privacy Toggle -->
+<div class="p-3.5 bg-surface-container-lowest border border-outline-variant/30 rounded-DEFAULT flex items-center justify-between mb-6">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[18px]">visibility_off</span>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Modo Incógnito Imperial</div>
+<div class="font-label-sm text-label-sm text-outline">Ocultar nombre civil y emitir ZK-Proof pública</div>
+</div>
+</div>
+<input class="w-4 h-4 rounded text-primary focus:ring-0 bg-surface-container-high border-outline-variant" type="checkbox">
+</div>
+</div>
+<!-- Action Confirmation Bottom -->
+<div class="pt-4 border-t border-outline-variant/30">
+<div class="flex items-center justify-between mb-3 text-xs text-outline">
+<span class="">Cargo por verificación oracular:</span>
+<span class="text-on-surface">$0.00 USD (Cortesía Apex)</span>
+</div>
+<button class="w-full py-3.5 bg-gradient-to-r from-primary-fixed via-primary to-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-widest font-bold rounded-DEFAULT shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:shadow-[0_0_35px_rgba(212,175,55,0.6)] transition-all flex items-center justify-center gap-2" onclick="executeTribute()">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+<span class="">Autorizar y Consignar Tributo</span>
+</button>
+<p class="font-body-md text-body-md text-[11px] text-center text-outline mt-3">
+          Al pulsar autorizar, acepta los estatutos soberanos inmutables del Consejo Rector.
+        </p>
+</div>
+</div>
+</div>
+<!-- ================= LUXURY FOOTER (SHARED COMPONENT EXECUTION) ================= -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+<div class="w-full max-w-[1440px] mx-auto px-margin py-space-xl flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Brand & Copyright -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">
+          SOVEREIGN APEX
+        </div>
+<p class="font-body-md text-body-md text-on-surface-variant/70 text-xs max-w-md">
+          © MMXXIV Sovereign Apex Corporation. Cryptographic Discretion Ensured. Zero Knowledge Financial Ledger.
+        </p>
+</div>
+<!-- Footer Nav Links -->
+<div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Discretion Protocol
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Audited Reserves
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Private Key Governance
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Encrypted Transmission
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Vault Terminus
+        </a>
+</div>
+<!-- Concierge Hotlink Seal -->
+<div class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant/30 rounded-DEFAULT bg-surface-container-low text-xs text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="">Concierge Ginebra: +41 22 819 00 00</span>
+</div>
+</div>
+</footer>
+<!-- ================= INLINE SCRIPT FOR INTERACTION & ATMOSPHERE ================= -->
+<script>
+    // Drawer open / close logic
+    function toggleDrawer(show) {
+      const drawer = document.getElementById('tributeDrawer');
+      const panel = document.getElementById('drawerPanel');
+      if (show) {
+        drawer.classList.remove('opacity-0', 'pointer-events-none');
+        drawer.classList.add('opacity-100');
+        panel.classList.remove('translate-x-full');
+        panel.classList.add('translate-x-0');
+      } else {
+        drawer.classList.add('opacity-0', 'pointer-events-none');
+        drawer.classList.remove('opacity-100');
+        panel.classList.add('translate-x-full');
+        panel.classList.remove('translate-x-0');
+      }
+    }
+
+    // Preset amount setter
+    function setTributeAmount(val) {
+      const input = document.getElementById('customTributeInput');
+      input.value = Number(val).toLocaleString('en-US');
+    }
+
+    // Contextual trigger from ranking buttons
+    function openTributeFor(name, currentAmount) {
+      document.getElementById('targetName').innerText = name;
+      const targetSuperate = (currentAmount + 1).toLocaleString('en-US');
+      document.getElementById('targetAmount').innerText = '$' + targetSuperate + ' USD';
+      toggleDrawer(true);
+    }
+
+    // Mock tribute execution feedback
+    function executeTribute() {
+      const amount = document.getElementById('customTributeInput').value;
+      const target = document.getElementById('targetName').innerText;
+      
+      const confirmBtn = event.currentTarget;
+      const originalContent = confirmBtn.innerHTML;
+      
+      confirmBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span> <span>Transfiriendo a Bóveda Suiza...</span>';
+      confirmBtn.disabled = true;
+
+      setTimeout(() => {
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span> <span>Tributo Consignado — Ascendido</span>';
+        setTimeout(() => {
+          toggleDrawer(false);
+          confirmBtn.innerHTML = originalContent;
+          confirmBtn.disabled = false;
+          alert('Protocolo de Consignación Confirmado:\nHas transferido exitosamente $' + amount + ' USD contra ' + target + '.\nTu nueva posición se reflejará en el siguiente bloque minado.');
+        }, 1200);
+      }, 1500);
+    }
+
+    // Filter table by member or insignia
+    function filterTable() {
+      const input = document.getElementById('memberSearch').value.toLowerCase();
+      const rows = document.querySelectorAll('#leaderboardTable tbody tr');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        if (text.includes(input)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+
+</body></html>

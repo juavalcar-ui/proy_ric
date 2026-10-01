@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Apex — Dossier Privado y Configuración de Identidad</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#690005",
+            "surface-container-lowest": "#0d0e12",
+            "on-primary-fixed": "#241a00",
+            "inverse-surface": "#e3e2e8",
+            "surface-dim": "#121317",
+            "outline": "#99907c",
+            "surface-tint": "#e9c349",
+            "surface": "#121317",
+            "secondary-fixed": "#ffe087",
+            "secondary-container": "#655000",
+            "primary": "#f2ca50",
+            "on-tertiary-fixed-variant": "#45464e",
+            "on-background": "#e3e2e8",
+            "inverse-on-surface": "#2f3035",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e3e2e8",
+            "surface-variant": "#343439",
+            "tertiary-container": "#b2b2bb",
+            "on-surface-variant": "#d0c5af",
+            "on-primary-container": "#554300",
+            "primary-fixed": "#ffe088",
+            "error": "#ffb4ab",
+            "on-secondary-fixed-variant": "#574500",
+            "on-primary-fixed-variant": "#574500",
+            "background": "#121317",
+            "secondary": "#e1c46e",
+            "tertiary-fixed": "#e2e1eb",
+            "on-tertiary-fixed": "#1a1b22",
+            "on-secondary-fixed": "#231b00",
+            "tertiary-fixed-dim": "#c6c6cf",
+            "tertiary": "#cecdd7",
+            "outline-variant": "#4d4635",
+            "on-tertiary": "#2f3037",
+            "on-secondary": "#3c2f00",
+            "secondary-fixed-dim": "#e1c46e",
+            "on-tertiary-container": "#43444c",
+            "surface-container-high": "#292a2e",
+            "error-container": "#93000a",
+            "on-primary": "#3c2f00",
+            "on-secondary-container": "#e1c46e",
+            "primary-container": "#d4af37",
+            "surface-bright": "#38393e",
+            "primary-fixed-dim": "#e9c349",
+            "inverse-primary": "#735c00",
+            "surface-container-highest": "#343439",
+            "surface-container-low": "#1a1b20",
+            "surface-container": "#1f1f24"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xs": "0.375rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "gutter-mobile": "0.75rem",
+            "space-lg": "2rem",
+            "space-xl": "3.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "numeral-hero": ["Playfair Display"],
+            "numeral-hero-mobile": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "display-md-mobile": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "display-md": ["Playfair Display"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "numeral-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+            "numeral-hero-mobile": ["42px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.16em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-md-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "display-md": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+    .gold-caustic {
+      box-shadow: 0 0 50px -10px rgba(212, 175, 55, 0.15);
+    }
+    .gold-glow {
+      box-shadow: 0 0 24px -4px rgba(212, 175, 55, 0.28);
+    }
+    .obsidian-card {
+      background-color: #121318;
+      border: 1px solid rgba(212, 175, 55, 0.14);
+    }
+    .obsidian-card-tier2 {
+      background-color: #181A20;
+      border-top: 1px solid rgba(245, 215, 127, 0.35);
+      border-left: 1px solid rgba(212, 175, 55, 0.12);
+      border-right: 1px solid rgba(212, 175, 55, 0.12);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    .gold-pulse-dot {
+      box-shadow: 0 0 10px #D4AF37;
+      animation: pulseGold 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    @keyframes pulseGold {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(1.15); }
+    }
+  </style>
+</head>
+<body class="bg-[#0B0C10] text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
+<!-- ========================================================= -->
+<!-- TOP NAV BAR (Shared Component Anchor)                     -->
+<!-- ========================================================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.85)]">
+<div class="w-full max-w-[1440px] mx-auto px-6 md:px-margin h-20 flex items-center justify-between">
+<!-- Brand Logo Left -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Apex Sovereign Board Crest" class="h-10 w-auto object-contain brightness-110 drop-shadow-[0_2px_12px_rgba(212,175,55,0.25)]" src="https://lh3.googleusercontent.com/aida/AEtjO1Wpay98-nqMFQ_T9pEnebSrrUtn4nvLlt8zyW3jZWiGJDp79S3YhCVvIVvRXH7igWug3nUrAIAXD111fMmHI5zjgMIYRGxh6zGOqGNYP7BZnTAq2qINeKp0wUV8XtKIox61ZOwFYeBzafhdL1E9yKQ9omptonJpRb2KNhEq9dKCR63NkmI8zZtYbh0XqnQg-pmEN4rCMeF_9ZDP7iRBcEbvswIF3su8d-NKmCosLmtj14LesKypao4Ip9k"/>
+</a>
+</div>
+<!-- Center Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 lg:gap-10">
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg tracking-widest uppercase transition-colors" href="#">
+          Ranking Global
+        </a>
+<a class="text-primary border-b border-primary pb-1 font-label-lg text-label-lg tracking-widest uppercase flex items-center gap-2" href="#">
+<span>Mi Perfil &amp; Dossier</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg tracking-widest uppercase transition-colors" href="#">
+          Audited Reserves
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg tracking-widest uppercase transition-colors" href="#">
+          Vault Protocol
+        </a>
+</nav>
+<!-- Right Trailing Profile & Actions -->
+<div class="flex items-center gap-3 md:gap-5">
+<!-- Current Rank Pill -->
+<div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#181A20] border border-primary/30 gold-glow">
+<span class="w-2 h-2 rounded-full bg-primary gold-pulse-dot"></span>
+<span class="font-headline-md text-primary text-sm font-semibold tracking-wider">#7 Apex Member</span>
+</div>
+<div class="h-5 w-[1px] bg-outline-variant/30 hidden sm:block"></div>
+<!-- Utility Action Icons -->
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200" title="Cifrado Bóveda de Claves">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200 relative" title="Alertas de Soberanía">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-primary"></span>
+</button>
+<!-- Monogram Seal / Profile Trigger -->
+<button class="flex items-center gap-2 pl-2 border-l border-outline-variant/30 group">
+<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#F5D77F] via-[#D4AF37] to-[#8C6D1F] p-[1px] group-hover:gold-glow transition-all">
+<div class="w-full h-full rounded-full bg-[#121318] flex items-center justify-center text-primary font-headline-md text-xs font-semibold">
+              CM
+            </div>
+</div>
+</button>
+</div>
+</div>
+</header>
+<!-- ========================================================= -->
+<!-- MAIN DOSSIER CANVAS                                       -->
+<!-- ========================================================= -->
+<main class="flex-1 pt-28 pb-space-xl px-4 sm:px-6 md:px-margin max-w-[1440px] mx-auto w-full">
+<!-- Hero Header / Breadcrumb & Status -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant/20 pb-6">
+<div>
+<div class="flex items-center gap-2.5 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest mb-2">
+<span class="text-primary font-medium">Bóveda Cifrada</span>
+<span>/</span>
+<span>Dossier de Identidad</span>
+<span>/</span>
+<span class="text-on-surface">Gestión de Proyección Pública</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight flex items-center gap-3">
+          Dossier Privado y Configuración de Identidad
+        </h1>
+<p class="text-on-surface-variant/80 font-body-md text-body-md mt-1 max-w-2xl">
+          Ajuste los parámetros criptográficos de exposición en el Zenith Index. Su prestigio financiero se refleja según sus directrices de privacidad estricta.
+        </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-surface-container-low border border-primary/25 rounded-lg text-xs font-label-sm tracking-wider uppercase text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+          Cifrado E2E Activo
+        </span>
+<span class="px-3 py-1 bg-surface-container-low border border-outline-variant/30 rounded-lg text-xs font-label-sm tracking-wider uppercase text-tertiary-fixed-dim">
+          Sync: Bloque #982,104
+        </span>
+</div>
+</div>
+<!-- ========================================================= -->
+<!-- APEX GRAND PATRON: HERO PROFILE CARD                      -->
+<!-- ========================================================= -->
+<section class="obsidian-card-tier2 rounded-lg p-6 md:p-8 mb-10 gold-caustic relative overflow-hidden">
+<!-- Watermark Background Emblem -->
+<div class="absolute right-0 top-0 bottom-0 w-96 opacity-5 pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-[320px] text-primary" data-icon="token">token</span>
+</div>
+<div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+<!-- Member Profile Cluster -->
+<div class="flex items-center gap-5 sm:gap-7">
+<!-- Engraved Crest Avatar -->
+<div class="relative">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-gradient-to-br from-[#F5D77F] via-[#D4AF37] to-[#60490E] p-[2px] shadow-2xl">
+<div class="w-full h-full rounded-xl bg-[#0F1014] flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Radial interior sheen -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/15 via-transparent to-transparent"></div>
+<span class="material-symbols-outlined text-primary text-4xl mb-1 drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]" data-icon="military_tech">military_tech</span>
+<span class="font-headline-md text-primary text-xs font-bold tracking-widest">APEX</span>
+</div>
+</div>
+<div class="absolute -bottom-2 -right-2 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[10px] tracking-widest uppercase font-bold border border-[#FFE89E]">
+              #07
+            </div>
+</div>
+<!-- Titles & Member Details -->
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="px-2.5 py-0.5 rounded bg-surface-container-high border border-primary/40 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+                Apex Grand Patron
+              </span>
+<span class="text-tertiary-fixed-dim font-label-sm text-xs tracking-wider">
+                ID: #007-APEX
+              </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface" id="hero-display-alias">
+              Carlos de Mendoza y Borbón
+            </h2>
+<div class="flex items-center gap-3 text-on-surface-variant font-body-md text-sm mt-0.5">
+<span class="text-primary font-medium" id="hero-display-subtitle">Alias Activo: «César Nocturno»</span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-primary/80" data-icon="account_balance">account_balance</span>
+                Mónaco / Ginebra
+              </span>
+</div>
+</div>
+</div>
+<!-- Financial Snapshot Metric Clusters -->
+<div class="w-full lg:w-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-outline-variant/30 lg:pl-8">
+<!-- Metric 1 -->
+<div class="bg-[#121318]/90 p-4 rounded-lg border border-white/5">
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest block mb-1">
+              Total Aportado
+            </span>
+<div class="font-numeral-hero text-3xl sm:text-4xl text-primary font-medium tracking-tight">
+              $28,500,000
+            </div>
+<span class="text-xs text-primary/70 font-label-sm tracking-wider uppercase mt-1 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary gold-pulse-dot"></span>
+              USD Auditados C-10
+            </span>
+</div>
+<!-- Metric 2 -->
+<div class="bg-[#121318]/90 p-4 rounded-lg border border-white/5">
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest block mb-1">
+              Posición Global
+            </span>
+<div class="font-headline-lg text-3xl sm:text-4xl text-on-surface font-semibold flex items-center gap-2">
+<span>#7</span>
+<span class="text-xs font-label-sm text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-1.5 py-0.5 rounded">▲ +2</span>
+</div>
+<span class="text-xs text-on-surface-variant font-body-md mt-1 block">
+              Top 0.001% Soberano
+            </span>
+</div>
+<!-- Metric 3 -->
+<div class="bg-[#121318]/90 p-4 rounded-lg border border-white/5">
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest block mb-1">
+              Última Ascensión
+            </span>
+<div class="font-headline-md text-2xl sm:text-3xl text-on-surface font-normal">
+              Hace 2 días
+            </div>
+<span class="text-xs text-on-surface-variant font-body-md mt-1 block">
+              +$3.5M Ingot Escrow
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================= -->
+<!-- 2-COLUMN DOSSIER MATRIX                                   -->
+<!-- ========================================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- ===================================================== -->
+<!-- LEFT COLUMN: DATOS PERSONALES & PROYECCIÓN PÚBLICA    -->
+<!-- ===================================================== -->
+<section class="lg:col-span-7 space-y-6">
+<div class="obsidian-card rounded-lg p-6 sm:p-8">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary" data-icon="badge">badge</span>
+                Datos Personales &amp; Proyección Pública
+              </h3>
+<p class="text-on-surface-variant font-body-md text-sm mt-0.5">
+                Defina su identidad civil y la denominación heráldica mostrada en los libros del club.
+              </p>
+</div>
+<span class="px-2 py-1 rounded bg-[#16171D] border border-outline-variant/30 text-[11px] font-label-sm text-primary uppercase">
+              Sección 01
+            </span>
+</div>
+<form class="space-y-6" id="profile-form" onsubmit="event.preventDefault();">
+<!-- Nombre Completo Field -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface" for="fullNameInput">
+                  Nombre Completo
+                </label>
+<span class="inline-flex items-center gap-1.5 text-xs font-label-sm tracking-wider uppercase text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="visibility_off">visibility_off</span>
+                  Ocultable en Ranking
+                </span>
+</div>
+<div class="relative">
+<input class="w-full bg-[#0E0F14] border border-white/10 rounded-lg px-4 py-3 text-on-surface font-body-lg text-body-lg focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all placeholder:text-outline/50" id="fullNameInput" placeholder="Ingrese su nombre legal o dinástico" type="text" value="Carlos de Mendoza y Borbón"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-outline">
+<span class="material-symbols-outlined text-lg" data-icon="fingerprint">fingerprint</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant/70 mt-1.5">
+                Nombre verificado según protocolo de pasaporte de inversión y firma privada KYC Apex.
+              </p>
+</div>
+<!-- Alias Público Field -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface flex items-center gap-2" for="aliasInput">
+<span>Alias Público en el Tablero</span>
+<span class="text-primary text-xs font-normal lowercase tracking-normal">(Nombre de combate financiero)</span>
+</label>
+<span class="inline-flex items-center gap-1.5 text-xs font-label-sm tracking-wider uppercase text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/30">
+<span class="material-symbols-outlined text-xs" data-icon="public">public</span>
+                  Siempre Visible en Top
+                </span>
+</div>
+<div class="relative">
+<input class="w-full bg-[#0E0F14] border border-white/10 rounded-lg px-4 py-3 text-primary font-headline-md text-lg focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="aliasInput" placeholder="Ej. Conde de Montecristo, Apex Phantom..." type="text" value="César Nocturno"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-primary/80">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant/70 mt-1.5">
+                Este es el título prominente que verán los otros 99 miembros del Apex Sovereign Board.
+              </p>
+</div>
+<!-- País de Residencia / Bóveda Field -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface" for="vaultLocationInput">
+                  País de Residencia / Bóveda Principal
+                </label>
+<span class="text-xs font-label-sm tracking-wider uppercase text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/30" id="country-tag-indicator">
+                  Visible Condicional
+                </span>
+</div>
+<div class="relative">
+<input class="w-full bg-[#0E0F14] border border-white/10 rounded-lg px-4 py-3 text-on-surface font-body-lg text-body-lg focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" id="vaultLocationInput" placeholder="Ej. Zúrich, Singapur, Liechtenstein..." type="text" value="Mónaco / Ginebra"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-outline">
+<span class="material-symbols-outlined text-lg" data-icon="map">map</span>
+</div>
+</div>
+</div>
+<!-- Frase de Poder o Lema Personal (Textarea) -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface flex items-center gap-1.5" for="mottoTextarea">
+<span>Frase de Poder o Lema Personal</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="auto_awesome">auto_awesome</span>
+</label>
+<span class="text-xs font-label-sm text-primary/80" id="char-counter">
+                  89 / 140 caracteres
+                </span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-[#0E0F14] border border-white/10 rounded-lg p-4 text-on-surface font-headline-md italic text-base leading-relaxed focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all resize-none" id="mottoTextarea" maxlength="140" placeholder="Escriba su máxima de soberanía patrimonial..." rows="3">«El verdadero poder nunca pide permiso. Si tienes que preguntar el precio, no perteneces aquí.»</textarea>
+</div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant/70 mt-1.5">
+<span>Inscrita bajo sello áureo en la vista detallada de su perfil.</span>
+<span class="text-primary flex items-center gap-1 font-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="workspace_premium">workspace_premium</span>
+                  Insignia Dorada Habilitada
+                </span>
+</div>
+</div>
+<!-- Insignia personalizada / Título Nobiliario Moderno -->
+<div>
+<label class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface block mb-3">
+                Título Nobiliario Soberano Seleccionado
+              </label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<!-- Option 1 -->
+<label class="relative flex flex-col p-3.5 rounded-lg border border-primary bg-[#181A20] cursor-pointer gold-glow transition-all">
+<input checked="" class="sr-only peer" name="sovereign_title" onchange="updateTitle('Patrono Supremo')" type="radio" value="Patrono Supremo"/>
+<div class="flex items-center justify-between mb-1.5">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="crown">crown</span>
+<span class="w-3 h-3 rounded-full border border-primary bg-primary"></span>
+</div>
+<span class="font-headline-md text-sm text-primary font-semibold">Patrono Supremo</span>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Custodia Tier I</span>
+</label>
+<!-- Option 2 -->
+<label class="relative flex flex-col p-3.5 rounded-lg border border-white/10 bg-[#0E0F14] hover:border-primary/50 cursor-pointer transition-all">
+<input class="sr-only peer" name="sovereign_title" onchange="updateTitle('Magnate Silencioso')" type="radio" value="Magnate Silencioso"/>
+<div class="flex items-center justify-between mb-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" data-icon="hotel_class">hotel_class</span>
+<span class="w-3 h-3 rounded-full border border-outline"></span>
+</div>
+<span class="font-headline-md text-sm text-on-surface font-semibold">Magnate Silencioso</span>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Perfil Discreto</span>
+</label>
+<!-- Option 3 -->
+<label class="relative flex flex-col p-3.5 rounded-lg border border-white/10 bg-[#0E0F14] hover:border-primary/50 cursor-pointer transition-all">
+<input class="sr-only peer" name="sovereign_title" onchange="updateTitle('Soberano Apex')" type="radio" value="Soberano Apex"/>
+<div class="flex items-center justify-between mb-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-xl" data-icon="diamond">diamond</span>
+<span class="w-3 h-3 rounded-full border border-outline"></span>
+</div>
+<span class="font-headline-md text-sm text-on-surface font-semibold">Soberano Apex</span>
+<span class="text-[11px] text-on-surface-variant mt-0.5">Gobernanza Máxima</span>
+</label>
+</div>
+</div>
+</form>
+</div>
+</section>
+<!-- ===================================================== -->
+<!-- RIGHT COLUMN: PROTOCOLO DE PRIVACIDAD & VISIBILIDAD   -->
+<!-- ===================================================== -->
+<section class="lg:col-span-5 space-y-6">
+<!-- Privacy Protocol Card -->
+<div class="obsidian-card-tier2 rounded-lg p-6 sm:p-7">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-5">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="policy">policy</span>
+                Protocolo de Privacidad &amp; Visibilidad
+              </h3>
+<p class="text-on-surface-variant font-body-md text-sm mt-0.5">
+                Control de revelación de activos y grado de anonimato en el índice general.
+              </p>
+</div>
+<span class="px-2 py-1 rounded bg-[#16171D] border border-primary/30 text-[11px] font-label-sm text-primary uppercase">
+              Zero-Knowledge
+            </span>
+</div>
+<!-- 3 Main Visibility Modes (Segmented Selector) -->
+<div class="space-y-3 mb-6">
+<span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface block">
+              Modo de Exposición en el Ranking
+            </span>
+<!-- Mode 1: Transparencia Total -->
+<div class="p-4 rounded-lg border border-white/10 bg-[#121318] hover:border-primary/40 cursor-pointer transition-all relative" id="mode-card-total" onclick="selectMode('total')">
+<div class="flex items-start gap-3">
+<div class="mt-0.5">
+<span class="mode-radio-icon w-4 h-4 rounded-full border border-outline block"></span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md text-on-surface">Modo Transparencia Total</h4>
+<span class="text-[10px] uppercase font-label-sm tracking-widest text-on-surface-variant bg-surface-container-high px-1.5 py-0.5 rounded">100% Público</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">
+                    Todos los datos expuestos: Nombre real dinástico, Alias, Frase de poder, País de custodia y Monto exacto aportado.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Mode 2: Exclusivo (Recomendado) -->
+<div class="p-4 rounded-lg border border-primary bg-[#181A20] cursor-pointer gold-glow transition-all relative" id="mode-card-exclusive" onclick="selectMode('exclusive')">
+<div class="flex items-start gap-3">
+<div class="mt-0.5">
+<span class="mode-radio-icon w-4 h-4 rounded-full border-2 border-primary bg-primary block"></span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md text-primary flex items-center gap-1.5">
+<span>Modo Exclusivo</span>
+<span class="text-[10px] uppercase font-label-sm tracking-widest text-on-primary bg-primary px-1.5 py-0.2 rounded font-bold">Recomendado</span>
+</h4>
+<span class="material-symbols-outlined text-primary text-base" data-icon="shield">shield</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">
+                    Equilibrio de élite: Solo su Alias público, Frase de poder y Capital aportado. Nombre real civil y país permanecen estrictamente encriptados.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Mode 3: Enigmático / Fantasma -->
+<div class="p-4 rounded-lg border border-white/10 bg-[#121318] hover:border-primary/40 cursor-pointer transition-all relative" id="mode-card-phantom" onclick="selectMode('phantom')">
+<div class="flex items-start gap-3">
+<div class="mt-0.5">
+<span class="mode-radio-icon w-4 h-4 rounded-full border border-outline block"></span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md text-on-surface">Modo Enigmático / Fantasma</h4>
+<span class="text-[10px] uppercase font-label-sm tracking-widest text-outline bg-surface-container-high px-1.5 py-0.5 rounded">Stealth</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">
+                    Máxima discreción suiza: Solo se exhibe su Lema y el Monto. Su alias se reemplaza globalmente por <span class="text-primary italic">«Anónimo Soberano #7»</span>.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Granular Toggles -->
+<div class="border-t border-outline-variant/30 pt-5 space-y-4">
+<span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface block mb-2">
+              Ajustes Granulares de Exposición
+            </span>
+<!-- Toggle 1: Ocultar país -->
+<label class="flex items-start justify-between gap-4 cursor-pointer group">
+<div class="flex items-start gap-3">
+<input checked="" class="mt-1 w-4 h-4 rounded bg-[#0E0F14] border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 transition-colors" id="toggle-hide-country" onchange="updateLivePreview()" type="checkbox"/>
+<div>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors text-sm font-medium block">
+                    Ocultar país de residencia / custodia
+                  </span>
+<span class="text-xs text-on-surface-variant">Reemplaza el territorio por «Jurisdicción Cifrada» en la tabla.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-base" data-icon="lock">lock</span>
+</label>
+<!-- Toggle 2: Notas de cortesía -->
+<label class="flex items-start justify-between gap-4 cursor-pointer group">
+<div class="flex items-start gap-3">
+<input checked="" class="mt-1 w-4 h-4 rounded bg-[#0E0F14] border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 transition-colors" id="toggle-courtesy-notes" onchange="updateLivePreview()" type="checkbox"/>
+<div>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors text-sm font-medium block">
+                    Permitir notas de cortesía de alto valor
+                  </span>
+<span class="text-xs text-on-surface-variant">Solo miembros del Top 10 pueden enviarle transmisiones selladas.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary text-base" data-icon="mail">mail</span>
+</label>
+<!-- Toggle 3: Insignia banco suizo -->
+<label class="flex items-start justify-between gap-4 cursor-pointer group">
+<div class="flex items-start gap-3">
+<input checked="" class="mt-1 w-4 h-4 rounded bg-[#0E0F14] border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 transition-colors" id="toggle-swiss-badge" onchange="updateLivePreview()" type="checkbox"/>
+<div>
+<span class="font-body-md text-on-surface group-hover:text-primary transition-colors text-sm font-medium block">
+                    Mostrar insignia de fondos auditados por banco suizo
+                  </span>
+<span class="text-xs text-on-surface-variant">Insignia dorada de validación de solvencia institucional Tier-1.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-base" data-icon="verified_user">verified_user</span>
+</label>
+</div>
+</div>
+<!-- ===================================================== -->
+<!-- LIVE PREVIEW CARD ("Cómo te ven los demás")            -->
+<!-- ===================================================== -->
+<div class="obsidian-card rounded-lg p-5 border border-primary/25 relative overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary gold-pulse-dot"></span>
+<span class="font-label-sm text-xs uppercase tracking-widest text-primary font-semibold">
+                Live Sovereign Preview
+              </span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-label-sm uppercase tracking-wider">
+              En tiempo real
+            </span>
+</div>
+<p class="text-xs text-on-surface-variant mb-3">
+            Así se renderiza exactamente su fila en el tablero público del Sovereign Index:
+          </p>
+<!-- Mock Index Row Container -->
+<div class="bg-[#121318] border border-white/10 rounded p-4 hover:border-primary/50 transition-all gold-glow relative">
+<div class="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
+<!-- Left side: Rank + Identifiers -->
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Rank Anchor -->
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-headline-lg text-2xl text-primary font-semibold tracking-tight">07</span>
+<div class="w-[1px] h-8 bg-primary/30"></div>
+</div>
+<!-- Avatar Crest Miniature -->
+<div class="w-10 h-10 rounded-lg bg-[#181A20] border border-primary/40 flex items-center justify-center shrink-0">
+<span class="font-headline-md text-primary text-xs font-bold">CM</span>
+</div>
+<!-- Name & Secondary Meta -->
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-base text-on-surface font-semibold truncate" id="preview-display-name">
+                      César Nocturno
+                    </span>
+<span class="material-symbols-outlined text-primary text-sm shrink-0" data-icon="verified" id="preview-swiss-badge" title="Auditado por Banco Suizo">verified</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="text-on-surface-variant/60 hidden" id="preview-dynasty-name">Carlos de Mendoza y Borbón •</span>
+<span class="flex items-center gap-1 text-[11px]" id="preview-location-badge">
+<span class="material-symbols-outlined text-[13px] text-primary/70" data-icon="location_on">location_on</span>
+<span id="preview-location-text">Jurisdicción Cifrada</span>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary font-label-sm text-[10px] tracking-wider uppercase" id="preview-selected-title">
+                      Patrono Supremo
+                    </span>
+</div>
+</div>
+</div>
+<!-- Right side: Financial Capital -->
+<div class="text-right shrink-0">
+<span class="font-numeral-hero text-xl text-primary font-medium tracking-tight block">
+                  $28,500,000
+                </span>
+<span class="text-[10px] font-label-sm text-on-surface-variant/80 tracking-widest uppercase">
+                  USD Verificados
+                </span>
+</div>
+</div>
+<!-- Dynamic Power Motto Quote in Row Preview -->
+<div class="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between gap-2">
+<p class="font-headline-md italic text-xs text-on-surface-variant/90 truncate" id="preview-motto-text">
+                «El verdadero poder nunca pide permiso. Si tienes que preguntar el precio, no perteneces aquí.»
+              </p>
+<span class="shrink-0 text-[10px] font-label-sm tracking-wider uppercase text-primary/80 bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">
+                Tier Apex I
+              </span>
+</div>
+</div>
+<div class="mt-3 text-[11px] text-center text-on-surface-variant/70">
+            Los cambios se propagarán al libro mayor en el siguiente bloque de validación.
+          </div>
+</div>
+</section>
+</div>
+<!-- ========================================================= -->
+<!-- BOTTOM ACTION BAR (Sticky or Grounded Command Strip)       -->
+<!-- ========================================================= -->
+<div class="mt-12 pt-6 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#121318]/90 backdrop-blur-md p-6 rounded-lg border border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-emerald-500 gold-pulse-dot"></div>
+<div>
+<span class="text-xs font-label-sm text-on-surface uppercase tracking-wider block">
+            Firma Criptográfica Lista
+          </span>
+<span class="text-xs text-on-surface-variant">
+            Hash del Dossier: <span class="font-mono text-tertiary">0x8f2a...39d1b</span>
+</span>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto">
+<!-- Secondary Luxury Outline Action -->
+<button class="w-full sm:w-auto px-6 py-3 rounded-lg border border-white/20 text-on-surface font-label-lg text-label-lg tracking-widest uppercase hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center gap-2 bg-transparent" type="button">
+<span class="material-symbols-outlined text-base" data-icon="trending_up">trending_up</span>
+<span>Aumentar Contribución para Subir al Puesto #6</span>
+</button>
+<!-- Primary Sovereign Gold Action -->
+<button class="w-full sm:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-[#F5D77F] to-[#D4AF37] text-[#0B0C10] font-label-lg text-label-lg font-bold tracking-widest uppercase hover:brightness-110 transition-all duration-300 gold-glow flex items-center justify-center gap-2 cursor-pointer" id="btn-save-dossier" onclick="triggerSaveAnimation()" type="button">
+<span class="material-symbols-outlined text-base" data-icon="check_circle">check_circle</span>
+<span>Guardar Cambios del Dossier</span>
+</button>
+</div>
+</div>
+</main>
+<!-- ========================================================= -->
+<!-- LUXURY FOOTER (Shared Component Anchor)                   -->
+<!-- ========================================================= -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+<div class="w-full max-w-[1440px] mx-auto px-6 md:px-margin py-space-xl flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Brand & Ledger Statement -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-primary tracking-tight font-medium">SOVEREIGN APEX</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-[10px] font-label-sm uppercase tracking-widest text-primary border border-primary/30">Privé</span>
+</div>
+<p class="text-on-surface-variant/70 font-body-md text-xs max-w-md">
+          © MMXXIV Sovereign Apex Corporation. Cryptographic Discretion Ensured. Zero Knowledge Financial Ledger.
+        </p>
+</div>
+<!-- Links Hierarchy -->
+<div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Discretion Protocol
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Audited Reserves
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Private Key Governance
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Encrypted Transmission
+        </a>
+<a class="text-on-surface-variant/70 hover:text-primary font-label-sm text-label-sm tracking-widest uppercase transition-colors hover:underline underline-offset-4" href="#">
+          Vault Terminus
+        </a>
+</div>
+</div>
+</footer>
+<!-- ========================================================= -->
+<!-- INLINE LOGIC FOR REAL-TIME PREVIEW & INTERACTIONS         -->
+<!-- ========================================================= -->
+<script>
+    let currentMode = 'exclusive'; // 'total' | 'exclusive' | 'phantom'
+    let currentTitle = 'Patrono Supremo';
+
+    const fullNameInput = document.getElementById('fullNameInput');
+    const aliasInput = document.getElementById('aliasInput');
+    const vaultLocationInput = document.getElementById('vaultLocationInput');
+    const mottoTextarea = document.getElementById('mottoTextarea');
+    const charCounter = document.getElementById('char-counter');
+
+    const previewDisplayName = document.getElementById('preview-display-name');
+    const previewDynastyName = document.getElementById('preview-dynasty-name');
+    const previewLocationBadge = document.getElementById('preview-location-badge');
+    const previewLocationText = document.getElementById('preview-location-text');
+    const previewMottoText = document.getElementById('preview-motto-text');
+    const previewSelectedTitle = document.getElementById('preview-selected-title');
+    const previewSwissBadge = document.getElementById('preview-swiss-badge');
+
+    const heroDisplayAlias = document.getElementById('hero-display-alias');
+    const heroDisplaySubtitle = document.getElementById('hero-display-subtitle');
+
+    const toggleHideCountry = document.getElementById('toggle-hide-country');
+    const toggleSwissBadge = document.getElementById('toggle-swiss-badge');
+
+    // Handle Mode Switch
+    function selectMode(mode) {
+      currentMode = mode;
+      
+      const cards = {
+        total: document.getElementById('mode-card-total'),
+        exclusive: document.getElementById('mode-card-exclusive'),
+        phantom: document.getElementById('mode-card-phantom')
+      };
+
+      Object.keys(cards).forEach(key => {
+        const card = cards[key];
+        const icon = card.querySelector('.mode-radio-icon');
+        if (key === mode) {
+          card.classList.remove('border-white/10', 'bg-[#121318]');
+          card.classList.add('border-primary', 'bg-[#181A20]', 'gold-glow');
+          icon.className = 'mode-radio-icon w-4 h-4 rounded-full border-2 border-primary bg-primary block';
+        } else {
+          card.classList.add('border-white/10', 'bg-[#121318]');
+          card.classList.remove('border-primary', 'bg-[#181A20]', 'gold-glow');
+          icon.className = 'mode-radio-icon w-4 h-4 rounded-full border border-outline block';
+        }
+      });
+
+      // Synchronize default checkboxes according to selected mode
+      if (mode === 'total') {
+        toggleHideCountry.checked = false;
+      } else if (mode === 'exclusive') {
+        toggleHideCountry.checked = true;
+      } else if (mode === 'phantom') {
+        toggleHideCountry.checked = true;
+      }
+
+      updateLivePreview();
+    }
+
+    function updateTitle(title) {
+      currentTitle = title;
+      previewSelectedTitle.textContent = title;
+    }
+
+    function updateLivePreview() {
+      const aliasVal = aliasInput.value.trim() || 'César Nocturno';
+      const fullNameVal = fullNameInput.value.trim() || 'Carlos de Mendoza y Borbón';
+      const locationVal = vaultLocationInput.value.trim() || 'Mónaco / Ginebra';
+      const mottoVal = mottoTextarea.value.trim() || '«El verdadero poder nunca pide permiso.»';
+      const hideCountry = toggleHideCountry.checked;
+      const swissActive = toggleSwissBadge.checked;
+
+      // Character count
+      charCounter.textContent = `${mottoTextarea.value.length} / 140 caracteres`;
+      previewMottoText.textContent = `«${mottoVal.replace(/^[«"]|[»"]$/g, '')}»`;
+
+      // Swiss badge visibility
+      previewSwissBadge.style.display = swissActive ? 'inline-block' : 'none';
+
+      // Visibility Mode Logic
+      if (currentMode === 'total') {
+        previewDisplayName.textContent = aliasVal;
+        previewDynastyName.textContent = fullNameVal + ' •';
+        previewDynastyName.classList.remove('hidden');
+        previewLocationText.textContent = hideCountry ? 'Jurisdicción Cifrada' : locationVal;
+        heroDisplayAlias.textContent = fullNameVal;
+        heroDisplaySubtitle.textContent = `Alias Activo: «${aliasVal}»`;
+      } else if (currentMode === 'exclusive') {
+        previewDisplayName.textContent = aliasVal;
+        previewDynastyName.classList.add('hidden');
+        previewLocationText.textContent = hideCountry ? 'Jurisdicción Cifrada' : locationVal;
+        heroDisplayAlias.textContent = fullNameVal;
+        heroDisplaySubtitle.textContent = `Alias Activo: «${aliasVal}»`;
+      } else if (currentMode === 'phantom') {
+        previewDisplayName.textContent = 'Anónimo Soberano #7';
+        previewDynastyName.classList.add('hidden');
+        previewLocationText.textContent = 'Jurisdicción Cifrada';
+        heroDisplayAlias.textContent = 'Anónimo Soberano #7';
+        heroDisplaySubtitle.textContent = `Modo Stealth Activado (ID: #007-APEX)`;
+      }
+    }
+
+    // Input Listeners
+    fullNameInput.addEventListener('input', updateLivePreview);
+    aliasInput.addEventListener('input', updateLivePreview);
+    vaultLocationInput.addEventListener('input', updateLivePreview);
+    mottoTextarea.addEventListener('input', updateLivePreview);
+
+    function triggerSaveAnimation() {
+      const btn = document.getElementById('btn-save-dossier');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-base" data-icon="progress_activity">progress_activity</span><span>Cifrando en Bloque...</span>`;
+      btn.classList.add('opacity-80', 'pointer-events-none');
+
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-base" data-icon="done_all">done_all</span><span>¡Dossier Actualizado!</span>`;
+        btn.classList.remove('opacity-80', 'pointer-events-none');
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+        }, 2500);
+      }, 1000);
+    }
+
+    // Initialize preview state
+    updateLivePreview();
+  </script>
+</body></html>
